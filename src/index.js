@@ -26,7 +26,6 @@ class App extends React.Component{
           flNum:response.data.flight_number,
           lnchY:response.data.launch_year,
         })
-        console.log(response.data.rocket)
       })
   }
   render(){
