@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import axios from 'axios';
+import Style from './Style.css'
 
 
 class App extends React.Component{
@@ -34,9 +35,14 @@ class App extends React.Component{
         color:'red'
       }
     }
+    const BodyStyle = props => (
+      <div className='body'>{props.children}</div>
+    )
+
     const {rName,rType,ldl,lSite,det,flNum,lnchY} = this.state
     return(
       <div style={styles.div}>
+      <BodyStyle>
         <center><h1>SpaceX Tracker</h1></center>
         <p><b>Flight Number:</b> {flNum}</p>
         <p><b>Launch Year:</b> {lnchY}</p>
@@ -49,6 +55,7 @@ class App extends React.Component{
         target={"_blank"}>Video</a></p>
         <p><a style={styles.div} href="https://www.reddit.com/r/spacex/comments/7li8y2/rspacex_iridium_next_4_official_launch_discussion/"
           target={"_blank"}>Reddit Launch</a></p>
+      </BodyStyle>
       </div>
     )
   }
